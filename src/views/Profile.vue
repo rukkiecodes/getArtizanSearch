@@ -139,7 +139,7 @@ export default {
         },
 
         async bookArtizan() {
-            window.open('https://next-getartizan.netlify.app/')
+            window.open('https://user.getartizan.com')
             localStorage.setArtizan = this.$route.params.id
         }
     }
