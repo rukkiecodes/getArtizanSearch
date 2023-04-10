@@ -1,7 +1,10 @@
 // Utilities
 import { db } from '@/plugins/firebase'
-import { collection, getDocs, onSnapshot, query, where } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import { defineStore } from 'pinia'
+import { useAppStore } from './app'
+
+const app = useAppStore()
 
 export const useSearchStore = defineStore('search', {
     state: () => ({
@@ -22,6 +25,12 @@ export const useSearchStore = defineStore('search', {
                     ...doc.data()
                 })
             })
+
+            if (this.users.length < 1) {
+                app.snackbar = true
+                app.snackbarText = 'no result found'
+                app.snackbarColor = 'warning'
+            }
         },
     }
 })

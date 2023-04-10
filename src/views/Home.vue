@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="font-weight-light text-h4 text-md-h3 text-lg-h2 my-16">Search to find and artizan</h1>
+    <h1 class="font-weight-light text-h4 text-md-h3 text-lg-h2 my-16">Search to find an artizan</h1>
     <v-row align="center">
       <v-col cols="12" sm="5">
         <v-autocomplete :items="app.categories" v-model="search.categories" label="Search categories" variant="solo"
